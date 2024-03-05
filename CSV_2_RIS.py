@@ -6,7 +6,7 @@ def convert_to_ris(csv_file, ris_file):
     
     with open(ris_file, 'w', encoding='utf-8') as f:
         
-        for row in df.iterrows(): # Iterate over each row in the dataframe
+        for index, row in df.iterrows(): # Iterate over each row in the dataframe
             # Write RIS tags to the file. Make sure the CSV uses the same column names as this function
             f.write('TY  - JOUR\n')
             f.write('TI  - ' + str(row['Item Title']) + '\n')
@@ -19,7 +19,7 @@ def convert_to_ris(csv_file, ris_file):
             f.write('UR  - ' + str(row['URL']) + '\n')
             f.write('ER  - \n\n')
 
-    print("Conversion completed. RIS file saved as", ris_file)
+    print("Success! RIS file saved as", ris_file)
 
 csv_file = 'filename' #Rename to correct file
 ris_file = 'filename' #Rename output file
