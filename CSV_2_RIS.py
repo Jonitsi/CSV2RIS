@@ -1,10 +1,7 @@
 import pandas as pd
 
 def convert_to_ris(csv_file, ris_file):
-    # Read CSV file into pandas DataFrame
     df = pd.read_csv(csv_file)
-
-    # Open RIS file for writing
     with open(ris_file, 'w', encoding='utf-8') as f:
         # Iterate over each row in the DataFrame
         for index, row in df.iterrows():
@@ -22,6 +19,6 @@ def convert_to_ris(csv_file, ris_file):
 
     print("Conversion completed. RIS file saved as", ris_file)
 
-csv_file = 'Springer_Engineering.csv' #Rename to correct file
-ris_file = 'Springer_ENG.ris' #Rename output file
+csv_file = 'filename' #Rename to correct file
+ris_file = 'filename' #Rename output file
 convert_to_ris(csv_file, ris_file)
