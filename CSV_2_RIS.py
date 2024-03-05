@@ -1,10 +1,12 @@
 import pandas as pd
 
 def convert_to_ris(csv_file, ris_file):
+    
     df = pd.read_csv(csv_file)
+    
     with open(ris_file, 'w', encoding='utf-8') as f:
-        # Iterate over each row in the DataFrame
-        for row in df.iterrows():
+        
+        for row in df.iterrows(): # Iterate over each row in the dataframe
             # Write RIS tags to the file. Make sure the CSV uses the same column names as this function
             f.write('TY  - JOUR\n')
             f.write('TI  - ' + str(row['Item Title']) + '\n')
